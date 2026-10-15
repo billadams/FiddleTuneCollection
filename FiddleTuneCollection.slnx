@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="fiddletunecollection.client/fiddletunecollection.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="FiddleTuneCollection.Server/FiddleTuneCollection.Server.csproj" />
+</Solution>

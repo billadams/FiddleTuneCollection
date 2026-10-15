@@ -1,0 +1,6 @@
+@FiddleTuneCollection.Server_HostAddress = http://localhost:5010
+
+GET {{FiddleTuneCollection.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
