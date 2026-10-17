@@ -1,21 +1,4 @@
-﻿#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.page {
+﻿.page {
   display: grid;
   grid-template:
     [row1-start] "header" 100px [row1-end]
@@ -40,7 +23,6 @@ body {
 }
 
 aside {
-  grid-area: aside;
   height: 800px;
   background-color: yellow;
 }

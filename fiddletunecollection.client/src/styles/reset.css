@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+:where( body, h1, h2, h3, h4, h5, h6, p, hr, pre, ul, ol, menu, blockquote, dl, dd, figure ) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(menu, ul) {
+  list-style-type: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+textarea {
+  resize: vertical;
+}
+
+:where(input, textarea) {
+  padding: 7px;
+  border-radius: 3px;
+  color: #666666;
+}
+
+:where(caption, th) {
+  text-align: left;
+}
