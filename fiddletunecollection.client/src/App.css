@@ -9,3 +9,43 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: grid;
+  grid-template:
+    [row1-start] "header" 100px [row1-end]
+    [row2-start] "content" 800px [row2-end]
+    [row3-start] "footer" 50px [row3-end]
+    / 1fr;
+  gap: 1.5rem;
+}
+
+.header {
+  grid-area: header;
+  background-color: red;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 2fr;
+  height: 800px;
+  background-color: lightgray;
+}
+
+aside {
+  grid-area: aside;
+  height: 800px;
+  background-color: yellow;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rebeccapurple;
+}

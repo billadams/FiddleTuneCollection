@@ -1,6 +1,6 @@
 function Search() {
   return (
-    <p>Hello world!</p>
+    <p>Search</p>
   );
 }
 

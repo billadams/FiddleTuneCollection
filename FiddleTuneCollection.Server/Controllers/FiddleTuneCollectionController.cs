@@ -4,7 +4,7 @@ namespace FiddleTuneCollection.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class FiddleTuneCollectionController : ControllerBase
     {
         private static readonly string[] Summaries =
         [
