@@ -1,0 +1,14 @@
+
+.filters {
+  display: flex;
+}
+
+.item {
+  display: flex;
+}
+
+.button {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}

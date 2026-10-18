@@ -1,0 +1,29 @@
+.contactDialog {
+  width: 100%;
+  border-color: #ced4da;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.closeButtonWrapper {
+  display: flex;
+
+  & .closeButton {
+    padding: 0.25rem;
+    margin-left: auto;
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+    & .closeButton:hover {
+      background-color: inherit;
+      color: #9e9e9e;
+    }
+}
+
+@media (min-width: 768px) {
+  .contactDialog {
+    width: 30%;
+  }
+}

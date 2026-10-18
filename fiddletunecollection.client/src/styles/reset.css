@@ -34,3 +34,7 @@ textarea {
 :where(caption, th) {
   text-align: left;
 }
+
+button {
+  border-style: none;
+}

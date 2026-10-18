@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import styles from '@/components/modal/modal.module.css';
+import styles from './modal.module.css';
 
 type ModalProps = {
     onClose: () => void;
