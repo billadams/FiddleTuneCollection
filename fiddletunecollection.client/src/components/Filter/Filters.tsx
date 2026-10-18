@@ -1,4 +1,4 @@
-import styles from './filters.module.css';
+import styles from './Filters.module.css';
 
 function Filters() {
   return (
@@ -8,10 +8,10 @@ function Filters() {
           <h3>Genre</h3>
           <ul className={styles.item}>
             <li><button type='button' className={styles.button}>All</button></li>
-            <li><button type='button' className={styles.button}>Jig</button></li>
-            <li><button type='button' className={styles.button}>Polka</button></li>
-            <li><button type='button' className={styles.button}>Reel</button></li>
-            <li><button type='button' className={styles.button}>Waltz</button></li>
+            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Jig</button></li>
+            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Polka</button></li>
+            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Reel</button></li>
+            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Waltz</button></li>
           </ul>
         </li>
         <li className={styles.filters}>

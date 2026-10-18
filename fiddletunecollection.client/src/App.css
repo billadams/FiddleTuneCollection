@@ -5,7 +5,7 @@
 }
 
 .header {
-  background-color: red;
+/*  background-color: red;*/
 }
 
 .content {
@@ -16,7 +16,7 @@
     grid-template-columns: 1fr 2fr;
   }
 
-  background-color: lightgray;
+/*  background-color: lightgray;*/
 }
 
 aside {
@@ -25,10 +25,10 @@ aside {
     order: -1;
   }
 
-  background-color: yellow;
+/*  background-color: yellow;*/
 }
 
 
 footer {
-  background-color: rebeccapurple;
+/*  background-color: rebeccapurple;*/
 }
