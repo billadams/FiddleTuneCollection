@@ -12,10 +12,10 @@ function App() {
     <div className='page'>
       <Header />
       <div className='content'>
-        <Sidebar />
         <main>
           <Outlet />
         </main>
+        <Sidebar />
       </div>
       <Footer />
     </div>

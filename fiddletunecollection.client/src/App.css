@@ -1,33 +1,34 @@
 ﻿.page {
   display: grid;
-  grid-template:
-    [row1-start] "header" 100px [row1-end]
-    [row2-start] "content" 800px [row2-end]
-    [row3-start] "footer" 50px [row3-end]
-    / 1fr;
-  gap: 1.5rem;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
 }
 
 .header {
-  grid-area: header;
   background-color: red;
 }
 
 .content {
-  grid-area: content;
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr 2fr;
-  height: 800px;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 2fr;
+  }
+
   background-color: lightgray;
 }
 
 aside {
-  height: 800px;
+
+  @media screen and (min-width: 768px) {
+    order: -1;
+  }
+
   background-color: yellow;
 }
 
+
 footer {
-  grid-area: footer;
   background-color: rebeccapurple;
 }
