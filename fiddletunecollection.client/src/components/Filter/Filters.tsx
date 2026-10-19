@@ -2,40 +2,32 @@ import styles from './Filters.module.css';
 
 function Filters() {
   return (
-    <div>
-      <ul>
-        <li className={styles.filters}>
+      <ul className={styles.filters}>
+        <li className={styles.filter}>
           <h3>Genre</h3>
-          <ul className={styles.item}>
-            <li><button type='button' className={styles.button}>All</button></li>
-            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Jig</button></li>
-            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Polka</button></li>
-            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Reel</button></li>
-            <li><button type='button' className={`${styles.button} ${styles.pillbutton}`}>Waltz</button></li>
-          </ul>
+            <button type='button' className={styles.button}>All</button>
+            <button type='button' className={`${styles.button} ${styles.pillbutton}`}>Jig</button>
+            <button type='button' className={`${styles.button} ${styles.pillbutton}`}>Polka</button>
+            <button type='button' className={`${styles.button} ${styles.pillbutton}`}>Reel</button>
+            <button type='button' className={`${styles.button} ${styles.pillbutton}`}>Waltz</button>
         </li>
-        <li className={styles.filters}>
+        <li className={styles.filter}>
           <h3>Key</h3>
-          <ul className={`${styles.item}`}>
-            <li><button type='button' className={styles.button}>All</button></li>
-            <li><button type='button' className={styles.button}>A</button></li>
-            <li><button type='button' className={styles.button}>C</button></li>
-            <li><button type='button' className={styles.button}>D</button></li>
-            <li><button type='button' className={styles.button}>G</button></li>
-          </ul>
+            <button type='button' className={styles.button}>All</button>
+            <button type='button' className={styles.button}>A</button>
+            <button type='button' className={styles.button}>C</button>
+            <button type='button' className={styles.button}>D</button>
+            <button type='button' className={styles.button}>G</button>
         </li>
-        <li className={styles.filters}>
+        <li className={styles.filter}>
           <h3>Time</h3>
-           <ul className={`${styles.item}`}>
-            <li><button type='button' className={styles.button}>All</button></li>
-            <li><button type='button' className={styles.button}>2 / 4</button></li>
-            <li><button type='button' className={styles.button}>3 / 4</button></li>
-            <li><button type='button' className={styles.button}>4 / 4</button></li>
-            <li><button type='button' className={styles.button}>6 / 8</button></li>
-          </ul>
+            <button type='button' className={styles.button}>All</button>
+            <button type='button' className={styles.button}>2 / 4</button>
+            <button type='button' className={styles.button}>3 / 4</button>
+            <button type='button' className={styles.button}>4 / 4</button>
+            <button type='button' className={styles.button}>6 / 8</button>
         </li>
       </ul>
-    </div>
   );
 }
 
