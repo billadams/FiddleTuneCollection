@@ -81,6 +81,10 @@ h2 {
   }
 }
 
+button {
+  color: var(--text);
+}
+
 code {
   display: inline-flex;
   line-height: 135%;
