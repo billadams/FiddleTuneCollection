@@ -3,7 +3,7 @@ import Filters from './Filter/Filters';
 function Sidebar() {
   return (
     <aside>
-      <h2>Filters</h2>
+      <h3>Filters</h3>
       <Filters />
     </aside>
   );
