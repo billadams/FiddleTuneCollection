@@ -1,6 +1,11 @@
+import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
+
 function Home() {
   return (
-    <h1>Fiddle Tunes</h1>
+    <>
+      <h2>Fiddle Tunes</h2>
+      <AudioPlayer />
+    </>
   );
 }
 
