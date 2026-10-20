@@ -12,7 +12,6 @@
     <Folder Include="public\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\AudioPlayer\" />
-    <Folder Include="src\components\TuneCard\" />
     <Folder Include="src\services\" />
   </ItemGroup>
 </Project>

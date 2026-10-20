@@ -1,10 +1,10 @@
+import Heading from '../components/Heading';
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 
 function Home() {
   return (
     <>
-      <h2>Fiddle Tunes</h2>
-      <AudioPlayer />
+      <Heading text="Fiddle Tunes" headingLevel={2} />
     </>
   );
 }

@@ -1,10 +1,14 @@
 import {default as Rh5AudioPlayer} from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
+export interface AudioPlayerProps {
+  src: string;
+}
 
-function AudioPlayer() {
+function AudioPlayer({ src }: AudioPlayerProps) {
   return (
     <Rh5AudioPlayer
-      src="path/to/your/audio/file.mp3"
+      src={src}
       onPlay={e => console.log("onPlay")}
     />
   );
