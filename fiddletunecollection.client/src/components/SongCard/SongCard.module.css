@@ -1,3 +1,25 @@
 .card {
+  border: 1px solid #e5e4e7;
   padding: 1rem;
+  width: calc(300px + 2rem);
+}
+
+.coverArt {
+  height: 300px;
+  width: 300px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.metadata {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.time {
+  margin-left: auto;
 }
