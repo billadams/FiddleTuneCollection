@@ -12,6 +12,7 @@ export interface Song {
   genre: string;
   coverArtPath: string;
   key: string;
+  sheetMusics?: SheetMusic[];
   time: string;
   title: string;
   videoUrl?: string;
@@ -19,21 +20,19 @@ export interface Song {
 
 interface SheetMusic {
   filePath: string;
+  url?: Url;
 }
 
 export interface SongCardProps {
   headingLevel: 1 | 2 | 3 | 4 | 5 | 6;
-  songs: Song[];
-  sheetMusics?: SheetMusic[];
+  song: Song;
 }
 
-function SongCard({ headingLevel, songs, sheetMusics }: SongCardProps) {
+function SongCard({ headingLevel, song }: SongCardProps) {
 
   return (
-    <>
-    {songs.map((song, index) => (
-      <div className={styles.card} key={index}>
-        <img src={song.coverArtPath} alt={`${song.title} cover art`} className={styles.coverArt} width='300' height='300' />
+      <div className={styles.card} key={`${song.title}-${song.key}`}>
+        <img src={song.coverArtPath} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
         <Heading text={song.title} headingLevel={headingLevel} classNames={styles.heading} />
         <div className={styles.body}>
           <div className={styles.metadata}>
@@ -45,8 +44,8 @@ function SongCard({ headingLevel, songs, sheetMusics }: SongCardProps) {
             <AudioPlayer src={song.audioPath} />
           </div>
           <div className={styles.sheetMusicDownload}>
-            {sheetMusics && sheetMusics.length > 0 ? (
-              sheetMusics.map((sheetMusic, index) => (
+            {song.sheetMusics && song.sheetMusics.length > 0 ? (
+              song.sheetMusics.map((sheetMusic, index) => (
                 <a key={index} href={sheetMusic.filePath} download>
                   Download Sheet Music {index + 1}
                 </a>
@@ -55,8 +54,6 @@ function SongCard({ headingLevel, songs, sheetMusics }: SongCardProps) {
           </div>
         </div>
       </div>
-    ))}
-    </>
   );
 }
 

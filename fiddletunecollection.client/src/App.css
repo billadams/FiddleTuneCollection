@@ -30,11 +30,11 @@
   margin: 0 1.5%;
   @media screen and (min-width: 768px) {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 2fr;
+    gap: 1.5%;
+    grid-template-columns: 3fr 9fr;
     width: unset;
     margin: unset;
-    padding: 0 1rem;
+    padding: 0 1%;
   }
 }
 
@@ -53,7 +53,8 @@ aside {
 
 footer {
   height: 50px;
-  border-top: 1px solid black;
+  border-top: 1px solid #6b6375;
   text-align: center;
   line-height: 50px;
+  margin-top: 1rem;
 }
