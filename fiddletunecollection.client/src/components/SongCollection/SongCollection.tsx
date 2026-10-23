@@ -8,6 +8,11 @@ export interface SongCollectionProps {
 
 function SongCollection({ headingLevel, songs }: SongCollectionProps) {
 
+
+  function sortSongsByTitle(songs: Song[]): Song[] {
+    return [...songs].sort((a, b) => a.title.localeCompare(b.title));
+  }
+
   return (
     <div className={styles.songs}>
       {songs.map((song, index) => (

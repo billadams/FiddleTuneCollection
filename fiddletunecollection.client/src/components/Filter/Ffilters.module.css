@@ -42,9 +42,14 @@
   cursor: pointer;
 }
 
-  .pillbutton {
-    padding-left: .75rem;
-    padding-right: .75rem;
-    border-radius: 1.5rem;
-    width: unset;
-  }
+.button:hover {
+  background-color: #6b6375;
+  color: #ffffff;
+}
+
+.pillbutton {
+  padding-left: .75rem;
+  padding-right: .75rem;
+  border-radius: 1.5rem;
+  width: unset;
+}
