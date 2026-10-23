@@ -1,4 +1,4 @@
-import styles from './Fwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwilters.module.css';
+import styles from './Filters.module.css';
 
 interface Filter {
   name: string;

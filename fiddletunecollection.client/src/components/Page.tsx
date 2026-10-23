@@ -1,5 +1,5 @@
 import Sidebar from './Sidebar';
-import Home from '../pages/Home';
+import Index from '../pages/Index';
 
 
 
@@ -8,7 +8,7 @@ function Page() {
   return (
         <div className='content'>
         <main>
-          <Home />
+          <Index />
         </main>
         <Sidebar />
       </div>
