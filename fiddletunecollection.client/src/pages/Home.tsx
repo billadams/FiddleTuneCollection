@@ -1,5 +1,5 @@
 import Heading from '../components/Heading';
-import { type Song, type SongCardProps } from '../components/SongCard/SongCard';
+import { type Song } from '../components/SongCard/SongCard';
 import SongCollection, { type SongCollectionProps } from '../components/SongCollection/SongCollection';
 
 const song: Song = {

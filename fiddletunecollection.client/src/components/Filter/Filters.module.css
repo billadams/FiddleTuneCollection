@@ -40,11 +40,11 @@
   background-color: #ffffff;
   border: 2px solid #6b6375;
   cursor: pointer;
-}
 
-.button:hover {
-  background-color: #6b6375;
-  color: #ffffff;
+  &:hover {
+    background-color: #6b6375;
+    color: #ffffff;
+  }
 }
 
 .pillbutton {
