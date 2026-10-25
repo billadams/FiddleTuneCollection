@@ -3,69 +3,63 @@ import { type Song } from '../components/SongCard/SongCard';
 import SongCollection, { type SongCollectionProps } from '../components/SongCollection/SongCollection';
 
 const song: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Reel',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'D',
-  sheetMusics: undefined,
-  time: '4 / 4',
+  id: 1,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }],
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  filters: [{name: 'Genre', value: 'Reel'}, {name: 'Key', value: 'D'}, {name: 'Time', value: '4 / 4'}],
+  sheetMusicFiles: undefined,
   title: 'Flop Eared Mule',
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const song1: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Jig',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'Em',
-  sheetMusics: undefined,
-  time: '6 / 8',
+  id: 2,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }], 
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  filters: [{name: 'Genre', value: 'Jig'}, {name: 'Key', value: 'Em'}, {name: 'Time', value: '6 / 8'}],
+  sheetMusicFiles: undefined,
   title: 'Swallow Tail',
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const song2: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Polka',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'D',
-  sheetMusics: undefined,
-  time: '4 / 4',
+  id: 3,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }],
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  filters: [{name: 'Genre', value: 'Polka'}, {name: 'Key', value: 'D'}, {name: 'Time', value: '4 / 4'}],
+  sheetMusicFiles: undefined,
   title: "John Ryan's Polka",
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const song3: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Waltz',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'D',
-  sheetMusics: undefined,
-  time: '4 / 4',
+  id: 4,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }],
+  filters: [{name: 'Genre', value: 'Waltz'}, {name: 'Key', value: 'D'}, {name: 'Time', value: '4 / 4'}],
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  sheetMusicFiles: undefined,
   title: 'Tennessee Waltz',
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const song4: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Reel',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'A',
-  sheetMusics: undefined,
-  time: '4 / 4',
+  id: 5,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }],
+  filters: [{name: 'Genre', value: 'Reel'}, {name: 'Key', value: 'A'}, {name: 'Time', value: '4 / 4'}],
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  sheetMusicFiles: undefined,
   title: 'Old Joe Clark',
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const song5: Song = {
-  audioPath: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-  genre: 'Reel',
-  coverArtPath: 'https://placeholdit.com/275x275/dddddd/999999',
-  key: 'G',
-  sheetMusics: undefined,
-  time: '4 / 4',
+  id: 6,
+  audioFiles: [{ id: 1, path: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }],
+  filters: [{name: 'Genre', value: 'Reel'}, {name: 'Key', value: 'G'}, {name: 'Time', value: '4 / 4'}],
+  coverArtFile: { id: 1, path: 'https://placeholdit.com/275x275/dddddd/999999' },
+  sheetMusicFiles: undefined,
   title: 'Puncheon Floor',
-  videoUrl: 'https://www.example.com/video.mp4'
+  videoFiles: [{ id: 1, path: 'https://www.example.com/video.mp4' }]
 };
 
 const songs: Song[] = [song, song1, song2, song3, song4, song5];
@@ -75,7 +69,7 @@ const songCollectionProps: SongCollectionProps = {
   songs: songs,
 };
 
-function Home() {
+function Index() {
   return (
     <>  
       <Heading text="Fiddle Tunes" headingLevel={2} />
@@ -87,4 +81,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;

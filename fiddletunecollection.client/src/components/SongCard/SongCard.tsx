@@ -7,20 +7,29 @@ interface Url {
   target: '_blank';
 }
 
-export interface Song {
-  audioPath: string
-  genre: string;
-  coverArtPath: string;
-  key: string;
-  sheetMusics?: SheetMusic[];
-  time: string;
-  title: string;
-  videoUrl?: string;
+interface IFile {
+  id: number;
+  path: string;
 }
 
-interface SheetMusic {
-  filePath: string;
-  url?: Url;
+interface AudioFile extends IFile {}
+interface CoverArtFile extends IFile {}
+interface SheetMusicFile extends IFile {}
+interface VideoFile extends IFile {}
+
+interface Filter {
+  name: string;
+  value: string;
+}
+
+export interface Song {
+  id: number;
+  audioFiles?: AudioFile[];
+  coverArtFile?: CoverArtFile;
+  filters?: Filter[];
+  sheetMusicFiles?: SheetMusicFile[];
+  title: string;
+  videoFiles?: VideoFile[];
 }
 
 export interface SongCardProps {
@@ -31,27 +40,38 @@ export interface SongCardProps {
 function SongCard({ headingLevel, song }: SongCardProps) {
 
   return (
-      <div className={styles.card} key={`${song.title}-${song.key}`}>
-        <img src={song.coverArtPath} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
+      <div className={styles.card} key={`${song.title}-${song.id}`}>
+        <img src={song.coverArtFile?.path} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
         <Heading text={song.title} headingLevel={headingLevel} classNames={styles.heading} />
         <div className={styles.body}>
+        {song.filters && song.filters.length > 0 ? (
           <div className={styles.metadata}>
-            <span className={styles.key}>Key of {song.key}</span>
-            <span className={styles.genre}>{song.genre}</span>
-            <span className={styles.time}>{song.time}</span>
+            {song.filters.map((filter) => (
+              <span key={`${filter.name}-${filter.value}`}>
+                {filter.name}: {filter.value}
+              </span>
+            ))}
           </div>
-          <div className={styles.audioPlayer}>
-            <AudioPlayer src={song.audioPath} />
-          </div>
-          <div className={styles.sheetMusicDownload}>
-            {song.sheetMusics && song.sheetMusics.length > 0 ? (
-              song.sheetMusics.map((sheetMusic, index) => (
-                <a key={index} href={sheetMusic.filePath} download>
-                  Download Sheet Music {index + 1}
-                </a>
-              ))
-            ) : null}
-          </div>
+        )
+          : 
+          null}
+          {song.audioFiles && song.audioFiles.length > 0 ? (
+            <div className={styles.audioPlayer}>
+              <AudioPlayer src={song.audioFiles?.[0]?.path} />
+            </div>
+          ) 
+          :
+          null}
+          {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
+            <div className={styles.sheetMusicDownload}>        
+                {song.sheetMusicFiles.map((sheetMusic, index) => (
+                  <a key={`${sheetMusic.id}-${sheetMusic.path}`} href={sheetMusic.path} download>
+                    Download Sheet Music {index + 1}
+                  </a>
+                ))}
+            </div>
+          )
+          : null}
         </div>
       </div>
   );

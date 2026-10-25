@@ -1,8 +1,6 @@
 import Sidebar from './Sidebar';
 import Index from '../pages/Index';
 
-
-
 function Page() {
 
   return (
