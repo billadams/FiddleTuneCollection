@@ -1,25 +1,25 @@
-﻿namespace FiddleTuneCollection.Server.Models;
+﻿using FiddleTuneCollection.Server.Models.File;
+
+namespace FiddleTuneCollection.Server.Models;
 
 public class Song
 {
-  public string AudioPath { get; set; }
-  public string Genre { get; set; }
-  public string CoverArtPath { get; set; }
-  public string Key { get; set; }
-  public List<SheetMusic>? SheetMusics { get; set; }
-  public string Time { get; set; }
+  public int ID { get; set; }
+  public List<AudioFile>? AudioFiles { get; set;}
+  public CoverArtFile CoverArtFile { get; set; }
+  public List<Filter>? Filters { get; set; }
+  public List<SheetMusicFile>? SheetMusicFiles { get; set; }
   public string Title { get; set; }
-  public string? VideoUrl { get; set; }
+  public List<VideoFile>? VideoFiles { get; set; }
 
-  public Song(string audioPath, string genre, string coverArtPath, string key, List<SheetMusic>? sheetMusics, string time, string title, string? videoUrl)
+  public Song(int id, List<AudioFile>? audioFiles, CoverArtFile coverArtFile, List<Filter> filters, List<SheetMusicFile>? sheetMusicFiles, string title, List<VideoFile>? videoFiles)
   {
-    AudioPath = audioPath;
-    Genre = genre;
-    CoverArtPath = coverArtPath;
-    Key = key;
-    SheetMusics = sheetMusics;
-    Time = time;
+    ID = id;
+    AudioFiles = audioFiles;
+    CoverArtFile = coverArtFile;
+    Filters = filters;
+    SheetMusicFiles = sheetMusicFiles;
     Title = title;
-    VideoUrl = videoUrl;
+    VideoFiles = videoFiles;
   }
 }
