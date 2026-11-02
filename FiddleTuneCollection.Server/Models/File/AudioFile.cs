@@ -4,12 +4,17 @@ namespace FiddleTuneCollection.Server.Models.File;
 
 public class AudioFile : IFile
 {
-  public int ID { get; set; }
+  //public int ID { get; set; }
   public string Path { get; set; }
 
-  public AudioFile(int id, string path)
+  public AudioFile(string path)
   {
-    ID = id;
     Path = path;
   }
+
+  //public AudioFile(int id, string path)
+  //{
+  //  ID = id;
+  //  Path = path;
+  //}
 }
