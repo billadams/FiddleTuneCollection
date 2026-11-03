@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FiddleTuneCollection.Server.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class FiddleTuneCollectionController : ControllerBase
 {
   [HttpGet(Name = "GetSongs")]
