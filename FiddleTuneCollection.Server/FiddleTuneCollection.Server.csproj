@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <SpaRoot>..\fiddletunecollection.client</SpaRoot>
-    <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
+    <SpaProxyLaunchCommand>pnpm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:60780</SpaProxyServerUrl>
   </PropertyGroup>
 
@@ -15,6 +15,7 @@
       <Version>10.*-*</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient.Extensions.Azure" Version="7.1.1" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.14" />
   </ItemGroup>
 

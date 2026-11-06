@@ -1,11 +1,14 @@
 import { type Song } from '../components/SongCard/SongCard';
 
 async function GetSongs(): Promise<any> {
-  fetch('/api/FiddleTuneCollection/GetSongs', { method: 'GET' })
-  .then(res => res.json())
-  .then(data => console.log(data.message));
+  var response = await fetch('/api/FiddleTuneCollection', { method: 'GET' })
+        if (response.ok) {
+            const data: Song[] = await response.json();
 
-  // return response.json();
+            return data;
+        }
+
+  console.log('Error fetching songs:', response.statusText);
 }
 
 export { GetSongs };

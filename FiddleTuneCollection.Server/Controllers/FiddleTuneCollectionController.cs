@@ -7,9 +7,9 @@ namespace FiddleTuneCollection.Server.Controllers;
 [Route("api/[controller]")]
 public class FiddleTuneCollectionController : ControllerBase
 {
-  [HttpGet(Name = "GetSongs")]
-  public List<Song> Get()
+  [HttpGet]
+  public JsonResult Get()
   {
-    return Song.GetSongs();
+    return new JsonResult(Song.GetSongs());
   }
 }
