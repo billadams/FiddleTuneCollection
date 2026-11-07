@@ -6,8 +6,9 @@ const router = createBrowserRouter([
   {
     path: '/',
     Component: App,
+    loader: IndexLoader,
     children: [
-      { index: true, Component: Index, loader: IndexLoader }
+      { index: true, Component: Index}
     ]
   },
 ]);

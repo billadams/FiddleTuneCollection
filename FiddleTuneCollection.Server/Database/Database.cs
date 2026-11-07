@@ -15,7 +15,6 @@ public class Database
     {
       _connectionString = configuration["ConnectionStrings:AZURE_SQL_CONNECTIONSTRING"]!;
       _connection = new SqlConnection(_connectionString);
-      _connection.Open();
     }
     catch (Exception ex)
     {
@@ -27,7 +26,7 @@ public class Database
   public List<SongDataModel> GetAllSongs()
   {
     var songs = new List<SongDataModel>();
-    
+
     using var command = new SqlCommand("dbo.Pr_GetSongs", _connection);
     command.CommandType = CommandType.StoredProcedure;
 
@@ -36,15 +35,21 @@ public class Database
     OpenConnection();
 
     using SqlDataReader reader = command.ExecuteReader();
-    while(reader.Read())
+    while (reader.Read())
     {
+      var songID = reader.GetInt32(reader.GetOrdinal("SongID"));
+      var title = reader.GetString(reader.GetOrdinal("Title"));
+      string? downloadPath = reader.IsDBNull(reader.GetOrdinal("DownloadPath")) ? null : reader.GetString(reader.GetOrdinal("DownloadPath"));
+      string? downloadType = reader.IsDBNull(reader.GetOrdinal("DownloadType")) ? null : reader.GetString(reader.GetOrdinal("DownloadType"));
+
       var song = new SongDataModel
       {
-        SongID = reader.GetInt32(reader.GetOrdinal("SongID")),
-        Title = reader.GetString(reader.GetOrdinal("Title")),
-        DownloadPath = reader.GetString(reader.GetOrdinal("DownloadPath")),
-        DownloadType = reader.GetString(reader.GetOrdinal("DownloadType")),
+        SongID = songID,
+        Title = title,
+        DownloadPath = downloadPath,
+        DownloadType = downloadType,
       };
+
       songs.Add(song);
     }
 

@@ -4,12 +4,14 @@ import SongCollection, { type SongCollectionProps } from '../components/SongColl
 import { type LoaderFunctionArgs, useLoaderData } from 'react-router';
 import { GetSongs } from '../services/Database';
 
-export function loader( req: LoaderFunctionArgs) {
-  return GetSongs();
+export async function loader(req: LoaderFunctionArgs) {
+  const songs: Array<Song> = await GetSongs();
+
+  return songs;
 }
 
 function Index() {
-  const songs = useLoaderData() as Song[];
+  const songs = useLoaderData<typeof loader>();
 
   return (
     <>  
