@@ -3,5 +3,5 @@
 public interface IFile
 {
   //public int ID { get; set; }
-  public string Path { get; set; }
+  public string FileName { get; set; }
 }

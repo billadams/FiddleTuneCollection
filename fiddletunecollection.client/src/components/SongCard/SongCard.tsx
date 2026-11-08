@@ -9,7 +9,7 @@ interface Url {
 
 interface IFile {
   id: number;
-  path: string;
+  fileName: string;
 }
 
 interface AudioFile extends IFile {}
@@ -41,7 +41,7 @@ function SongCard({ headingLevel, song }: SongCardProps) {
 
   return (
       <div className={styles.card} key={`${song.title}-${song.id}`}>
-        <img src={song.coverArtFile?.path} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
+        <img src={song.coverArtFile?.fileName} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
         <Heading text={song.title} headingLevel={headingLevel} classNames={styles.heading} />
         <div className={styles.body}>
         {song.filters && song.filters.length > 0 ? (
@@ -57,7 +57,8 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           null}
           {song.audioFiles && song.audioFiles.length > 0 ? (
             <div className={styles.audioPlayer}>
-              <AudioPlayer src={song.audioFiles?.[0]?.path} />
+            {/* TODO: Temporary single file implementation for simplicity. */}
+              <AudioPlayer fileName={song.audioFiles?.[0]?.fileName} />
             </div>
           ) 
           :
@@ -65,7 +66,7 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
             <div className={styles.sheetMusicDownload}>        
                 {song.sheetMusicFiles.map((sheetMusic, index) => (
-                  <a key={`${sheetMusic.id}-${sheetMusic.path}`} href={sheetMusic.path} download>
+                  <a key={`${sheetMusic.id}-${sheetMusic.fileName}`} href={sheetMusic.fileName} download>
                     Download Sheet Music {index + 1}
                   </a>
                 ))}

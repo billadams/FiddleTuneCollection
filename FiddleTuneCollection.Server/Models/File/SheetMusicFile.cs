@@ -5,11 +5,11 @@ namespace FiddleTuneCollection.Server.Models.File;
 public class SheetMusicFile : IFile
 {
   //public int ID { get; set; }
-  public string Path { get; set; }
+  public string FileName { get; set; }
 
-  public SheetMusicFile(string path)
+  public SheetMusicFile(string fileName)
   {
-    Path = path;
+    FileName = fileName;
   }
 
   //public SheetMusicFile(int id, string path)

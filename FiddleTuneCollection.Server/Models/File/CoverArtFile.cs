@@ -5,11 +5,11 @@ namespace FiddleTuneCollection.Server.Models.File;
 public class CoverArtFile : IFile
 {
   public int ID { get; set; }
-  public string Path { get; set; }
+  public string FileName { get; set; }
 
-  public CoverArtFile(int id, string path)
+  public CoverArtFile(int id, string fileName)
   {
     ID = id;
-    Path = path;
+    FileName = fileName;
   }
 }

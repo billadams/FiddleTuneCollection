@@ -2,13 +2,15 @@ import {default as Rh5AudioPlayer} from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 export interface AudioPlayerProps {
-  src: string;
+  fileName: string;
 }
 
-function AudioPlayer({ src }: AudioPlayerProps) {
+function AudioPlayer({ fileName }: AudioPlayerProps) {
+  const audioUrl = `${import.meta.env.VITE_API_BASE_URL}/api/audio/${fileName}`;
+
   return (
     <Rh5AudioPlayer
-      src={src}
+      src={audioUrl}
       onPlay={e => console.log("onPlay")}
     />
   );
