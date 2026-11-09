@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/FiddleTuneCollection.Server/Downloads/song-collection.pdf.pdf
+
+
+# Custom
+Downloads/
