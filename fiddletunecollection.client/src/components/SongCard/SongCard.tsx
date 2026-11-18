@@ -66,7 +66,7 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
             <div className={styles.sheetMusicDownload}>        
                 {song.sheetMusicFiles.map((sheetMusic, index) => (
-                  <a key={`${sheetMusic.id}-${sheetMusic.fileName}`} href={sheetMusic.fileName} download>
+                  <a key={`${sheetMusic.id}-${sheetMusic.fileName}`} href={`api/file/download/${sheetMusic.fileName}`} download>
                     Download Sheet Music {index + 1}
                   </a>
                 ))}
