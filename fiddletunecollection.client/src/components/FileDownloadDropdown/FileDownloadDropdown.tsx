@@ -30,6 +30,7 @@ function FileDownloadDropdown({ options }: FileDownloadDropdownProps) {
   }, []);
 
   const handleDownload = async(option: DownloadOption) => {
+    setDownloading(option.label);
     try {
       const response = await fetch(option.url);
       if (!response.ok) {
@@ -48,7 +49,6 @@ function FileDownloadDropdown({ options }: FileDownloadDropdownProps) {
       link.remove();
       window.URL.revokeObjectURL(blobUrl);
       setIsOpen(false);
-
     } catch (error) {
       console.error('Error downloading file:', error);
     } finally {
@@ -60,11 +60,12 @@ function FileDownloadDropdown({ options }: FileDownloadDropdownProps) {
     <div ref={dropdownRef} className={styles.container}>
       <button
         type='button'
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup='menu'
+        className={styles.showDownloadsButton}
         >
-        Download File
+        Download Sheet Music
         </button>
 
         {isOpen ? 

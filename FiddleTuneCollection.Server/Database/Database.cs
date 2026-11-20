@@ -39,14 +39,14 @@ public class Database
     {
       var songID = reader.GetInt32(reader.GetOrdinal("SongID"));
       var title = reader.GetString(reader.GetOrdinal("Title"));
-      string? downloadPath = reader.IsDBNull(reader.GetOrdinal("DownloadPath")) ? null : reader.GetString(reader.GetOrdinal("DownloadPath"));
+      string? filename = reader.IsDBNull(reader.GetOrdinal("Filename")) ? null : reader.GetString(reader.GetOrdinal("Filename"));
       string? downloadType = reader.IsDBNull(reader.GetOrdinal("DownloadType")) ? null : reader.GetString(reader.GetOrdinal("DownloadType"));
 
       var song = new SongDataModel
       {
         SongID = songID,
         Title = title,
-        DownloadPath = downloadPath,
+        Filename = filename,
         DownloadType = downloadType,
       };
 

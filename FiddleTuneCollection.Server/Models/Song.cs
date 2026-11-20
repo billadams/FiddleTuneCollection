@@ -44,45 +44,45 @@ public class Song
 
       foreach (var songDataModel in group)
       {
-        if (songDataModel.DownloadType == "Audio" && !string.IsNullOrWhiteSpace(songDataModel.DownloadPath))
+        if (songDataModel.DownloadType == "Audio" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
           if (song.AudioFiles != null)
           {
-            song.AudioFiles.Add(new AudioFile(songDataModel.DownloadPath));
+            song.AudioFiles.Add(new AudioFile(songDataModel.Filename));
           }
           else
           {
             song.AudioFiles = new List<AudioFile>
               {
-                new AudioFile(songDataModel.DownloadPath)
+                new AudioFile(songDataModel.Filename)
               };
           }
         }
-        else if (songDataModel.DownloadType == "Video" && !string.IsNullOrWhiteSpace(songDataModel.DownloadPath))
+        else if (songDataModel.DownloadType == "Video" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
           if (song.VideoFiles != null)
           {
-            song.VideoFiles.Add(new VideoFile(songDataModel.DownloadPath));
+            song.VideoFiles.Add(new VideoFile(songDataModel.Filename));
           }
           else
           {
             song.VideoFiles = new List<VideoFile>
               {
-                new VideoFile(songDataModel.DownloadPath)
+                new VideoFile(songDataModel.Filename)
               };
           }
         }
-        else if (songDataModel.DownloadType == "SheetMusic" && !string.IsNullOrWhiteSpace(songDataModel.DownloadPath))
+        else if (songDataModel.DownloadType == "SheetMusic" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
           if (song.SheetMusicFiles != null)
           {
-            song.SheetMusicFiles.Add(new SheetMusicFile(songDataModel.DownloadPath));
+            song.SheetMusicFiles.Add(new SheetMusicFile(songDataModel.Filename));
           }
           else
           {
             song.SheetMusicFiles = new List<SheetMusicFile>
               {
-                new SheetMusicFile(songDataModel.DownloadPath)
+                new SheetMusicFile(songDataModel.Filename)
               };
           }
         }

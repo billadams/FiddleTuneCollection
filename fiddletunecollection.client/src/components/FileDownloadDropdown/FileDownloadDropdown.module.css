@@ -3,6 +3,11 @@
   display: inline-block;
 }
 
+.showDownloadsButton {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
 .dropdown {
   position: absolute;
   top: 100%;
@@ -15,5 +20,14 @@
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 1000;
+}
+
+.downloadFileButton {
+  width: 100%;
+  padding: 8px 14px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
 import Heading from '../Heading';
+import FileDownloadDropdown from '../FileDownloadDropdown/FileDownloadDropdown';
 import styles from './SongCard.module.css';
 
 interface Url {
@@ -65,11 +66,11 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           null}
           {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
             <div className={styles.sheetMusicDownload}>        
-                {song.sheetMusicFiles.map((sheetMusic, index) => (
-                  <a key={`${sheetMusic.id}-${sheetMusic.fileName}`} href={`api/file/download/${sheetMusic.fileName}`} download>
-                    Download Sheet Music {index + 1}
-                  </a>
-                ))}
+                <FileDownloadDropdown options={song.sheetMusicFiles.map((sheetMusic) => ({
+                  filename: sheetMusic.fileName,
+                  label: song.title,
+                  url: `api/file/download/${sheetMusic.fileName}`,
+                }))} />
             </div>
           )
           : null}
