@@ -42,7 +42,9 @@ function SongCard({ headingLevel, song }: SongCardProps) {
 
   return (
       <div className={styles.card} key={`${song.title}-${song.id}`}>
-        <img src={song.coverArtFile?.fileName} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
+        <div className={styles.imageWrapper}>
+          <img src={song.coverArtFile?.fileName} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
+        </div>
         <Heading text={song.title} headingLevel={headingLevel} classNames={styles.heading} />
         <div className={styles.body}>
         {song.filters && song.filters.length > 0 ? (
@@ -65,13 +67,11 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           :
           null}
           {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
-            <div className={styles.sheetMusicDownload}>        
                 <FileDownloadDropdown options={song.sheetMusicFiles.map((sheetMusic) => ({
                   filename: sheetMusic.fileName,
                   label: song.title,
                   url: `api/file/download/${sheetMusic.fileName}`,
                 }))} />
-            </div>
           )
           : null}
         </div>

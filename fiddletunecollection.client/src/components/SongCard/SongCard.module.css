@@ -8,6 +8,11 @@
   }
 }
 
+.imageWrapper {
+  height: 275px;
+  width: 275px;
+}
+
 .coverArt {
   height: 275px;
   width: 275px;
@@ -33,4 +38,8 @@
 
 .time {
   margin-left: auto;
+}
+
+.audioPlayer {
+  margin-bottom: .5rem;
 }

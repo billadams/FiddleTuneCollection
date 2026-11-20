@@ -80,6 +80,7 @@ function FileDownloadDropdown({ options }: FileDownloadDropdownProps) {
                 role='menuitem'
                 disabled={downloading !== null}
                 onClick={() => handleDownload(option)}
+                className={styles.downloadFileButton}
                 >
                 {downloading === option.label ? 'Downloading...' : option.label}
                 </button>
