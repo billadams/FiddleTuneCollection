@@ -4,6 +4,10 @@ namespace FiddleTuneCollection.Server.Models;
 
 public class Song
 {
+  const short AudioDownloadTypeID = 1;
+  const short SheetMusicDownloadTypeID = 2;
+  const short VideoDownloadTypeID = 3;
+
   public int ID { get; set; }
   public List<AudioFile>? AudioFiles { get; set; }
   public CoverArtFile? CoverArtFile { get; set; }
@@ -44,47 +48,17 @@ public class Song
 
       foreach (var songDataModel in group)
       {
-        if (songDataModel.DownloadType == "Audio" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
+        if (songDataModel.DownloadTypeID == AudioDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          if (song.AudioFiles != null)
-          {
-            song.AudioFiles.Add(new AudioFile(songDataModel.Filename));
-          }
-          else
-          {
-            song.AudioFiles = new List<AudioFile>
-              {
-                new AudioFile(songDataModel.Filename)
-              };
-          }
+          song.AudioFiles?.Add(new AudioFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
-        else if (songDataModel.DownloadType == "Video" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
+        else if (songDataModel.DownloadTypeID == VideoDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          if (song.VideoFiles != null)
-          {
-            song.VideoFiles.Add(new VideoFile(songDataModel.Filename));
-          }
-          else
-          {
-            song.VideoFiles = new List<VideoFile>
-              {
-                new VideoFile(songDataModel.Filename)
-              };
-          }
+          song.VideoFiles?.Add(new VideoFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
-        else if (songDataModel.DownloadType == "SheetMusic" && !string.IsNullOrWhiteSpace(songDataModel.Filename))
+        else if (songDataModel.DownloadTypeID == SheetMusicDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          if (song.SheetMusicFiles != null)
-          {
-            song.SheetMusicFiles.Add(new SheetMusicFile(songDataModel.Filename));
-          }
-          else
-          {
-            song.SheetMusicFiles = new List<SheetMusicFile>
-              {
-                new SheetMusicFile(songDataModel.Filename)
-              };
-          }
+          song.SheetMusicFiles?.Add(new SheetMusicFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
       }
 

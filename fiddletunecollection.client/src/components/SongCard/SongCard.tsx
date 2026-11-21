@@ -13,10 +13,16 @@ interface IFile {
   fileName: string;
 }
 
-interface AudioFile extends IFile {}
-interface CoverArtFile extends IFile {}
-interface SheetMusicFile extends IFile {}
-interface VideoFile extends IFile {}
+interface IFileDownload extends IFile {
+  label: string;
+  downloadTypeID: number;
+  downloadType: string;
+}
+
+interface AudioFile extends IFileDownload {}
+interface CoverArtFile extends IFileDownload {}
+interface SheetMusicFile extends IFileDownload {}
+interface VideoFile extends IFileDownload {}
 
 interface Filter {
   name: string;
@@ -43,7 +49,7 @@ function SongCard({ headingLevel, song }: SongCardProps) {
   return (
       <div className={styles.card} key={`${song.title}-${song.id}`}>
         <div className={styles.imageWrapper}>
-          <img src={song.coverArtFile?.fileName} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
+          <img src={'https://placehold.co/275x275'} alt={`${song.title} cover art`} className={styles.coverArt} width='275' height='275' />
         </div>
         <Heading text={song.title} headingLevel={headingLevel} classNames={styles.heading} />
         <div className={styles.body}>

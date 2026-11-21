@@ -37,19 +37,23 @@ public class Database
     using SqlDataReader reader = command.ExecuteReader();
     while (reader.Read())
     {
-      var songID = reader.GetInt32(reader.GetOrdinal("SongID"));
+      int songID = reader.GetInt32(reader.GetOrdinal("SongID"));
       var title = reader.GetString(reader.GetOrdinal("Title"));
       string? filename = reader.IsDBNull(reader.GetOrdinal("Filename")) ? null : reader.GetString(reader.GetOrdinal("Filename"));
+      string? label = reader.IsDBNull(reader.GetOrdinal("Label")) ? null : reader.GetString(reader.GetOrdinal("Label"));
+      int? downloadTypeID = reader.IsDBNull(reader.GetOrdinal("DownloadTypeID")) ? null : reader.GetInt32(reader.GetOrdinal("DownloadTypeID"));
       string? downloadType = reader.IsDBNull(reader.GetOrdinal("DownloadType")) ? null : reader.GetString(reader.GetOrdinal("DownloadType"));
 
       var song = new SongDataModel
       {
         SongID = songID,
-        Title = title,
+        Title = title,    
         Filename = filename,
-        DownloadType = downloadType,
+        Label = label,
+        DownloadTypeID = downloadTypeID,
+        DownloadType = downloadType
       };
-
+    
       songs.Add(song);
     }
 

@@ -2,19 +2,19 @@
 
 namespace FiddleTuneCollection.Server.Models.File;
 
-public class AudioFile : IFile
+public class AudioFile : IFileDownload
 {
   //public int ID { get; set; }
   public string FileName { get; set; }
+  public string Label { get; set; }
+  public int DownloadTypeID { get; set; }
+  public string DownloadType { get; set; }
 
-  public AudioFile(string fileName)
+  public AudioFile(string fileName, string label, int downloadTypeID, string downloadType)
   {
     FileName = fileName;
+    Label = label;
+    DownloadTypeID = downloadTypeID;
+    DownloadType = downloadType;
   }
-
-  //public AudioFile(int id, string path)
-  //{
-  //  ID = id;
-  //  Path = path;
-  //}
 }
