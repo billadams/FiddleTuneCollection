@@ -44,16 +44,8 @@ public class Database
       int? downloadTypeID = reader.IsDBNull(reader.GetOrdinal("DownloadTypeID")) ? null : reader.GetInt32(reader.GetOrdinal("DownloadTypeID"));
       string? downloadType = reader.IsDBNull(reader.GetOrdinal("DownloadType")) ? null : reader.GetString(reader.GetOrdinal("DownloadType"));
 
-      var song = new SongDataModel
-      {
-        SongID = songID,
-        Title = title,    
-        Filename = filename,
-        Label = label,
-        DownloadTypeID = downloadTypeID,
-        DownloadType = downloadType
-      };
-    
+      var song = new SongDataModel(songID, title, filename, label, downloadTypeID, downloadType);
+
       songs.Add(song);
     }
 

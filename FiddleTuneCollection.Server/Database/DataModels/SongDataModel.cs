@@ -3,7 +3,7 @@
 public class SongDataModel
 {
   public int SongID { get; set; }
-  public required string Title { get; set; }
+  public string Title { get; set; }
   public string? Filename { get; set; }
   public string? Label { get; set; }
   public int? DownloadTypeID { get; set; }
