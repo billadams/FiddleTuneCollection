@@ -1,4 +1,5 @@
 import type { JSX } from "react/jsx-runtime";
+import styles from './Heading.module.css';
 
 interface HeadingProps {
   text: string;
@@ -9,7 +10,7 @@ interface HeadingProps {
 function Heading({ text, headingLevel, classNames }: HeadingProps) {
   const Tag = `h${headingLevel}` as keyof JSX.IntrinsicElements;
   return (
-    <Tag className={classNames}>{text}</Tag>
+    <Tag className={`${classNames} ${styles.mainHeading}`}>{text}</Tag>
   );
 }
 

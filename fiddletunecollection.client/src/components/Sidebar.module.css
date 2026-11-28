@@ -1,0 +1,12 @@
+.closeSidebar {
+  cursor: pointer;
+}
+
+/*.sidebarHeading {
+  display: flex;
+  align-items: center;
+
+  & .closeIcon {
+    margin-left: auto;
+  }
+}*/

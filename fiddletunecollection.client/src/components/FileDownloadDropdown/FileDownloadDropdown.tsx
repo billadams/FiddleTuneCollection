@@ -1,4 +1,6 @@
 import {useState, useRef, useEffect} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import styles from './FileDownloadDropdown.module.css';
 
 interface DownloadOption {
@@ -58,37 +60,62 @@ function FileDownloadDropdown({ options }: FileDownloadDropdownProps) {
 
   return (
     <div ref={dropdownRef} className={styles.container}>
-      <button
-        type='button'
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-expanded={isOpen}
-        aria-haspopup='menu'
-        className={styles.showDownloadsButton}
-        >
-        Download Sheet Music
-        </button>
-
-        {isOpen ? 
-          <ul
-            role='menu'
-            className={styles.dropdown}
-          >
-           {options.map((option) => (
-              <li key={option.filename} role='none' className={styles.dropdownItem}>
-              <button
-                type='button'
-                role='menuitem'
-                disabled={downloading !== null}
-                onClick={() => handleDownload(option)}
-                className={styles.downloadFileButton}
-                >
-                {downloading === option.label ? 'Downloading...' : option.label}
-                </button>
-                </li>
-            ))}
-          </ul>
-        :
-        null}
+    {options.length === 1 ?
+      <>
+        {options.map((option) => (
+        <button
+          type='button'
+          role='menuitem'
+          disabled={downloading !== null}
+          onClick={() => handleDownload(option)}
+          className={styles.showDownloadsButton}
+            >
+              {downloading === option.label ? 'Downloading...' : 'Download Sheet Music'}
+          </button>
+          ))}
+        </>
+      :
+      <>
+        <button
+          type='button'
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-expanded={isOpen}
+          aria-haspopup='menu'
+          className={styles.showDownloadsButton}
+            >
+              <div className={styles.showDownloadsText} >Download Sheet Music</div>
+              <div className={styles.showDownloadsIcon}>
+                {isOpen ?
+                  <FontAwesomeIcon icon={faChevronUp} />
+                :
+                  <FontAwesomeIcon icon={faChevronDown} />
+                }
+              </div>
+          </button>
+          {isOpen ? 
+            <ul
+              role='menu'
+              className={styles.dropdown}
+            >
+              {options.map((option) => (
+                <li key={option.filename} role='none' className={styles.dropdownItem}>
+                  <button
+                    type='button'
+                    role='menuitem'
+                    disabled={downloading !== null}
+                    onClick={() => handleDownload(option)}
+                    className={styles.downloadFileButton}
+                    >
+                      {downloading === option.label ? 'Downloading...' : option.label}
+                    </button>
+                  </li>
+              ))}
+            </ul>
+          :
+            null
+          }
+        </>
+      }
     </div>
   );
 }

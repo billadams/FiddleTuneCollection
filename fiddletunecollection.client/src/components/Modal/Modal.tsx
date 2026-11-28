@@ -1,8 +1,4 @@
-import React, {
-    useRef,
-    useEffect,
-    forwardRef
-} from 'react';
+import React, { useRef, useEffect, forwardRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import styles from './Modal.module.css';

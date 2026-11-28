@@ -4,9 +4,19 @@
 }
 
 .showDownloadsButton {
+  display: flex;
+  align-items: center;
   padding: 8px 14px;
   width: 100%;
   cursor: pointer;
+
+  & .showDownloadsText {
+
+  }
+
+  & .showDownloadsIcon {
+    margin-left: auto;
+  }
 }
 
 .dropdown {
@@ -15,20 +25,26 @@
   left: 0;
   width: 100%;
   margin-top: 4px;
-/*  padding: 4px 0;*/
   list-style: none;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 1000;
-}
 
-.downloadFileButton {
-  width: 100%;
-  padding: 8px 14px;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
+  & .dropdownItem {
+    border-bottom: 1px solid #cccccc;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  & .downloadFileButton {
+    width: 100%;
+    padding: 8px 14px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
 }
