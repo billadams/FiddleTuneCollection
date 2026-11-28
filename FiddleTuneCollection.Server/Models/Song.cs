@@ -50,15 +50,18 @@ public class Song
       {
         if (songDataModel.DownloadTypeID == AudioDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          song.AudioFiles?.Add(new AudioFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
+          song.AudioFiles ??= new List<AudioFile>();
+          song.AudioFiles.Add(new AudioFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
         else if (songDataModel.DownloadTypeID == VideoDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          song.VideoFiles?.Add(new VideoFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
+          song.VideoFiles ??= new List<VideoFile>();
+          song.VideoFiles.Add(new VideoFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
         else if (songDataModel.DownloadTypeID == SheetMusicDownloadTypeID && !string.IsNullOrWhiteSpace(songDataModel.Filename))
         {
-          song.SheetMusicFiles?.Add(new SheetMusicFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
+          song.SheetMusicFiles ??= new List<SheetMusicFile>();
+          song.SheetMusicFiles.Add(new SheetMusicFile(songDataModel.Filename, songDataModel.Label, songDataModel.DownloadTypeID.Value, songDataModel.DownloadType));
         }
       }
 

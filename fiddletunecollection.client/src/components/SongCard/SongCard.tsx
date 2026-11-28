@@ -75,7 +75,7 @@ function SongCard({ headingLevel, song }: SongCardProps) {
           {song.sheetMusicFiles && song.sheetMusicFiles.length > 0 ? (
                 <FileDownloadDropdown options={song.sheetMusicFiles.map((sheetMusic) => ({
                   filename: sheetMusic.fileName,
-                  label: song.title,
+                  label: sheetMusic.label,
                   url: `api/file/download/${sheetMusic.fileName}`,
                 }))} />
           )
