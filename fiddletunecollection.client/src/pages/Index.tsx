@@ -1,8 +1,8 @@
-import Heading from '../components/Heading';
-import { type Song } from '../components/SongCard/SongCard';
-import SongCollection, { type SongCollectionProps } from '../components/SongCollection/SongCollection';
 import { type LoaderFunctionArgs, useLoaderData } from 'react-router';
 import { GetSongs } from '../services/Database';
+import Heading from '../components/Heading/Heading';
+import { type Song } from '../components/SongCard/SongCard';
+import SongCollection from '../components/SongCollection/SongCollection';
 
 export async function loader(req: LoaderFunctionArgs) {
   const songs: Array<Song> = await GetSongs();

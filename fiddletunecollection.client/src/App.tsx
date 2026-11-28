@@ -3,7 +3,6 @@ import Footer from './components/Footer';
 import Page from './components/Page';
 import './styles/reset.css';
 import './styles/layout.css';
-import './App.css';
 
 function App() {
 

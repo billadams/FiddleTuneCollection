@@ -1,4 +1,4 @@
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import Index from '../pages/Index';
 
 function Page() {

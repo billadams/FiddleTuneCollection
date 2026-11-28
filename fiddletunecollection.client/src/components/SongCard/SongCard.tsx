@@ -1,5 +1,5 @@
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
-import Heading from '../Heading';
+import Heading from '../Heading/Heading';
 import FileDownloadDropdown from '../FileDownloadDropdown/FileDownloadDropdown';
 import styles from './SongCard.module.css';
 

@@ -6,8 +6,8 @@ interface Filter {
 }
 
 interface FiltersProps {
-  filters: Filter[]
-  handleFilterClick: (name: string, value: string) => void;
+  filters?: Filter[]
+  handleFilterClick?: (name: string, value: string) => void;
 }
 
 function Filters({ filters, handleFilterClick }: FiltersProps) {

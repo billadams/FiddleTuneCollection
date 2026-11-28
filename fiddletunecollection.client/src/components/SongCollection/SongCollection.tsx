@@ -1,13 +1,12 @@
 import SongCard, { type Song } from '../SongCard/SongCard';
 import styles from './SongCollection.module.css';
 
-export interface SongCollectionProps {
+interface SongCollectionProps {
   headingLevel: 1 | 2 | 3 | 4 | 5 | 6;
   songs: Song[];
 }
 
-function SongCollection({ headingLevel, songs }: SongCollectionProps) {
-
+function SongCollection({headingLevel, songs}: SongCollectionProps) {
 
   function sortSongsByTitle(songs: Song[]): Song[] {
     return [...songs].sort((a, b) => a.title.localeCompare(b.title));
